@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/prototypestyle.css">
+  <title>이쁜우렁이</title>
+</head>
+<body>
+  <header>
+    <a href= "#" class="brand"><h1>이쁜우렁이</h1><p>영어조합법인</p></a>
+    <div class="menu_btn"></div>
+    <div class="navigation" >
+      <div class="navigation_items">
+        <a href="#">회사소개</a>
+        <a href="#">제품소개</a>
+        <a href="#">이쁜이야기</a>
+        <a href="#">고객센터</a>
+      </div>
+    </div>
+  </header>
+  <!-- header end -->
+
+  <!-- home section start -->
+  <section class="home">
+    <img class="image_slide active" src="/사진/농장정면사진.jpeg">
+    <img class="image_slide" src="/사진/농장측면사진.jpeg">
+    <img class="image_slide" src="/사진/갓.jpeg">
+    <img class="image_slide" src="/사진/farmcat.jpeg">
+    <div class="content active">
+      <h1>page 1</h1>
+      <p>설명을 적어주세요. 이미지별 설명과 타이틀을 작성할 수 있습니다. </p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="content">
+      <h1>page 2</h1>
+      <p>설명을 적어주세요. 이미지별 설명과 타이틀을 작성할 수 있습니다. </p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="content">
+      <h1>page 3</h1>
+      <p>설명을 적어주세요. 이미지별 설명과 타이틀을 작성할 수 있습니다. </p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="content">
+      <h1>page 4</h1>
+      <p>설명을 적어주세요. 이미지별 설명과 타이틀을 작성할 수 있습니다. </p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="slider_navigation">
+      <div class="nav_btn active"></div>
+      <div class="nav_btn"></div>
+      <div class="nav_btn"></div>
+      <div class="nav_btn"></div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="footer_navigation">
+        <a href="#">이쁜우렁이</a>
+        <a href="#">회사소개</a>
+        <a href="#">제품소개</a>
+        <a href="#">이쁜이야기</a>
+        <a href="#">고객센터</a>
+        <a href="#">오시는길</a>
+      </div>
+      <hr>
+      <div class="footer_content">
+        <span class="footer_info">이쁜우렁이 영어조합법인</span>
+        <span class="footer_info">부산광역시 강서구 입소정관길 134-78(대저2동)</span>
+        <span class="footer_info">대표이사 김선하</span> <span class="footer_info">Fax: 051 980 0598</span><span class="footer_info">Email: summer4001@naver.com</span>
+        <span class="footer_info">사업자등록번호</span><span class="footer_info">대표전화</span> <span class="footer_info" >고객문의</span>
+        <div class="copyright">©2024.이쁜우렁이 Corp. All rights reserved.</div>
+      </div>
+    </div>
+    
+  </footer>
+  <script>
+    //네비 스크립트
+    const menuBtn = document.querySelector(".menu_btn");
+    const navigation = document.querySelector(".navigation");
+
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    // slider img 스크립트
+    const btns = document.querySelectorAll(".nav_btn");
+    const slides = document.querySelectorAll(".image_slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click",() => {
+        sliderNav(i);
+      });
+    })
+  </script>
+</body>
+</html>
